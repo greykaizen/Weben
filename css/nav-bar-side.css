@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(38, 38, 38);
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100%;
+    width: 4px;
+    margin-left: 60px;
+    background-color: coral;
+}
+
+.expand img {
+    width: 37px;
+    height: 37px;
+    object-fit: cover;
+    margin: 120px -21px;
+    transform: scaleX(-1);
+    background-color: white;
+}
