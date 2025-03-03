@@ -22,6 +22,8 @@ body {
 nav {
     display: inline-flex;
     list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: brown;
 }
 
 nav li {

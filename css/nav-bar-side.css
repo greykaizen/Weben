@@ -11,13 +11,24 @@ body {
     width: 4px;
     margin-left: 60px;
     background-color: coral;
+    transition: all 0.4s;
 }
+
+/* .sidebar:hover {
+    width: 100px;
+} */
 
 .expand img {
     width: 37px;
     height: 37px;
     object-fit: cover;
-    margin: 120px -21px;
+    /* margin: 120px -21px; */
+    margin: 120px -16px 0 -16px;
     transform: scaleX(-1);
     background-color: white;
+}
+
+.expand img:active + .sidebar{
+    height: 200px;
+    width: 200px;
 }

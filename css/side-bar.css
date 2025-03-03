@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    height: 97vh;
+    width: 5%;
+    /* border: 7px solid coral; */
+    border-right: 7px solid coral;
+    /* background-color: antiquewhite; */
+    /* border-radius: 0 14px 14px 0; */
+    /* margin-left: -180px; */
+    transition: 0.4s;
+}
+
+.sidebar:hover {
+    width: 17%;
+}
+
+.sidebar nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 80px;
+    /* margin-top: 120px; */
+    list-style: none;
+}
+
+.sidebar nav li {
+    line-height: 75px;
+    display: none;
+    transition: 1s;
+}
+
+.sidebar:hover nav li {
+    display: block;
+}

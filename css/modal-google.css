@@ -26,6 +26,16 @@ body {
 
 .div1 {
     background-color: aqua;
+    font-family: monospace;
+    font-size: 48px;
+    /* justify-content: center;
+    align-items: center; */
+    /* display: flex; */
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: underline;
+    letter-spacing: -6px;
 }
 
 .div2 {
