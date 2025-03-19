@@ -1,0 +1,231 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    z-index: 100;
+    border-right: 1px solid #222;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 220px;
+}
+
+.logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.logo-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-icon i {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.icon-text {
+    display: none;
+    white-space: nowrap;
+}
+
+.sidebar:hover .icon-text {
+    display: block;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.bottom-icons {
+    margin-bottom: 20px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 60px;
+    flex: 1;
+    transition: margin-left 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.feed-header {
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #181818;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding-left: 60px;
+    transition: padding-left 0.6s ease;
+}
+
+.sidebar:hover ~ .main-content .feed-header {
+    padding-left: 220px;
+}
+
+.feed-header h1 {
+    font-size: 20px;
+    position: absolute;
+    left: 650px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-top: 80px;
+    gap: 24px;
+}
+
+.settings-container {
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 30px;
+    width: 600px;
+    padding: 20px;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.settings-section h2 i {
+    margin-right: 10px;
+}
+
+.settings-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.settings-option label {
+    flex: 1;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.settings-option input[type="text"],
+.settings-option input[type="email"],
+.settings-option input[type="password"],
+.settings-option select {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+.settings-option input[readonly] {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+.settings-option button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0084ff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.settings-option button:hover {
+    background-color: #006acc;
+    transform: scale(1.05);
+}
+
+.settings-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar:hover {
+        width: 180px;
+    }
+
+    .sidebar:hover ~ .main-content {
+        margin-left: 180px;
+    }
+
+    .settings-container {
+        width: 90%;
+    }
+}

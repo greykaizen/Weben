@@ -1,0 +1,244 @@
+:root {
+    --bg-color: #121214;
+    --card-bg: #1c1c1f;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a5;
+    --accent-color: #5b41f5;
+    --border-color: #2c2c30;
+    --hover-color: #252528;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    z-index: 100;
+    border-right: 1px solid #222;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 220px;
+}
+
+.logo {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
+}
+
+.nav-icons, .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-icon i {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.icon-text {
+    display: none;
+    white-space: nowrap;
+}
+
+.sidebar:hover .icon-text {
+    display: block;
+}
+
+.active {
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 60px;
+    flex: 1;
+    transition: margin-left 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: calc(100% - 60px);
+}
+
+.header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.logo-text {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    font-family: monospace;
+}
+
+.search-bar {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    width: 240px;
+}
+
+.search-bar i {
+    color: var(--text-secondary);
+    margin-right: 10px;
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    width: 100%;
+}
+
+/* Appearance Section */
+.appearance-section {
+    padding: 30px;
+    width: 100%;
+}
+
+.appearance-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.appearance-options {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode .sidebar,
+body.light-mode .appearance-options,
+body.light-mode .header {
+    background-color: #f8f9fa;
+    border-color: #e0e0e0;
+}
+
+body.light-mode .nav-icon,
+body.light-mode .icon-text,
+body.light-mode .logo-text,
+body.light-mode .theme-toggle {
+    color: #000000;
+}

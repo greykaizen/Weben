@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Threads Clone</title>
+  <link rel="stylesheet" href="../css/setting-page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-placeholder"></div>
+    </div>
+    <div class="nav-icons">
+      <a href="homepage.html" class="nav-icon">
+        <i class="fas fa-home"></i>
+        <span class="icon-text">Home</span>
+      </a>
+      <a href="search.html" class="nav-icon">
+        <i class="fas fa-search"></i>
+        <span class="icon-text">Search</span>
+      </a>
+      <a href="#" class="nav-icon">
+        <i class="fas fa-plus"></i>
+        <span class="icon-text">Create</span>
+      </a>
+      <a href="#" class="nav-icon">
+        <i class="fas fa-heart"></i>
+        <span class="icon-text">Notifications</span>
+      </a>
+      <a href="#" class="nav-icon">
+        <i class="fas fa-user"></i>
+        <span class="icon-text">Profile</span>
+      </a>
+    </div>
+    <div class="bottom-icons">
+      <a href="../pages/setting-page.html" class="nav-icon active">
+        <i class="fas fa-cog"></i>
+        <span class="icon-text">Settings</span>
+      </a>
+      <a href="#" class="nav-icon">
+        <i class="fas fa-moon"></i>
+        <span class="icon-text">Appearance</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="feed-header">
+      <h1>Settings</h1>
+    </div>
+    <div class="content-wrapper">
+      <div class="settings-container">
+        <!-- Account Settings -->
+        <div class="settings-section">
+          <h2><i class="fas fa-user-cog"></i> Account Settings</h2>
+          <div class="settings-option">
+            <label for="username">Username</label>
+            <input type="text" id="username" value="dicascriativasrvc" readonly>
+            <button type="button" class="edit-button">Edit</button>
+          </div>
+          <div class="settings-option">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="user@example.com" readonly>
+            <button type="button" class="edit-button">Edit</button>
+          </div>
+          <div class="settings-option">
+            <label for="password">Password</label>
+            <input type="password" id="password" value="********" readonly>
+            <button type="button" class="edit-button">Edit</button>
+          </div>
+        </div>
+
+        <!-- Privacy Settings -->
+        <div class="settings-section">
+          <h2><i class="fas fa-shield-alt"></i> Privacy Settings</h2>
+          <div class="settings-option">
+            <label for="private-account">Private Account</label>
+            <input type="checkbox" id="private-account">
+          </div>
+          <div class="settings-option">
+            <label for="blocked-users">Blocked Users</label>
+            <button type="button" class="view-button" id="view-blocked">View Blocked Users</button>
+          </div>
+        </div>
+
+        <!-- Appearance Settings -->
+        <div class="settings-section">
+          <h2><i class="fas fa-palette"></i> Appearance</h2>
+          <div class="settings-option">
+            <label for="theme">Theme</label>
+            <select id="theme">
+              <option value="light">Light</option>
+              <option value="dark" selected>Dark</option>
+              <option value="system">System Default</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/setting-page.js"></script>
+</body>
+</html>

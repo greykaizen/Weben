@@ -14,6 +14,98 @@
     box-sizing: border-box;
 }
 
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    z-index: 100;
+    border-right: 1px solid #222;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar:hover ~ .main-content {
+    margin-left: 220px;
+}
+
+/* Logo Container */
+.logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Logo Image */
+.logo img {
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-icon i {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.icon-text {
+    display: none;
+    white-space: nowrap;
+}
+
+.sidebar:hover .icon-text {
+    display: block;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.bottom-icons {
+    margin-bottom: 20px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 60px;
+    flex: 1;
+    transition: margin-left 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: calc(100% - 60px); /* Adjusted to account for sidebar width */
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-color);
@@ -53,10 +145,8 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: #fff;
-    font-family: monospace; inline
+    font-family: monospace;
 }
-
-
 
 .nav {
     display: flex;
@@ -106,6 +196,7 @@ body {
     padding: 30px 20px;
     gap: 30px;
     border-bottom: 1px solid var(--border-color);
+    width: 100%; /* Ensure the profile section takes full width */
 }
 
 .profile-left {
@@ -257,6 +348,7 @@ body {
 
 .content-section {
     padding: 30px;
+    width: 100%; /* Ensure the content section takes full width */
 }
 
 .tabs {
@@ -362,6 +454,7 @@ body {
 
 .upcoming-section {
     margin-top: 40px;
+    width: 100%; /* Ensure the upcoming section takes full width */
 }
 
 .section-header {
@@ -407,8 +500,4 @@ body {
 .empty-state-message {
     max-width: 400px;
     margin: 0 auto;
-}
-
-.upcoming-section {
-    margin: 30px 160px;;
 }
