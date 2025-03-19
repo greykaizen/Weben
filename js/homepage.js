@@ -73,3 +73,23 @@ appearanceIcon.addEventListener('click', () => {
         appearanceIcon.classList.replace('fa-sun', 'fa-moon');
     }
 });
+
+// 7. Share Modal
+document.querySelectorAll('.share-button').forEach(shareButton => {
+    shareButton.addEventListener('click', () => {
+        const shareModal = document.getElementById('share-modal');
+        shareModal.style.display = 'flex';
+    });
+});
+
+document.querySelector('.close-modal').addEventListener('click', () => {
+    const shareModal = document.getElementById('share-modal');
+    shareModal.style.display = 'none';
+});
+
+document.getElementById('copy-link').addEventListener('click', () => {
+    const shareUrl = document.getElementById('share-url');
+    shareUrl.select();
+    document.execCommand('copy');
+    alert('Link copied to clipboard!');
+});

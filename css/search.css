@@ -52,18 +52,23 @@ body {
     margin-left: 220px;
 }
 
+/* Logo Container */
 .logo {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-start; /* Updated to flex-start for better alignment */
+    align-items: center; /* Center the logo horizontally */
 }
 
-.logo-placeholder {
-    width: 24px;
-    height: 24px;
-    background-color: #333;
-    border-radius: 50%;
+/* Logo Image */
+.logo img {
+    width: 70px; /* Adjust size as needed */
+    height: 70px;
+    /* border-radius: 50%; Optional: if you want a circular logo */
+    /* object-fit: cover; Ensures the image fits well within the dimensions */
+    filter: invert(1); /* Reset the logo to its original colors */
+
 }
 
 .nav-icons {

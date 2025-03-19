@@ -38,18 +38,20 @@ body {
     margin-left: 220px;
 }
 
+/* Logo Container */
 .logo {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.logo-placeholder {
-    width: 24px;
-    height: 24px;
-    background-color: #333;
-    border-radius: 50%;
+/* Logo Image */
+.logo img {
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
 }
 
 .nav-icons {
