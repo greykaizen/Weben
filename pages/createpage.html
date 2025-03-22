@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Scheduler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/createpage.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <section class="sidebar-section">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="../pages/homepage.html">
+                    <img src="../assets/mainLogo.png" alt="Main Logo">
+                </a>
+            </div>
+            <div class="nav-icons">
+                <a href="homepage.html" class="nav-icon">
+                    <i class="fas fa-home"></i>
+                    <span class="icon-text">Home</span>
+                </a>
+                <a href="search.html" class="nav-icon">
+                    <i class="fas fa-search"></i>
+                    <span class="icon-text">Search</span>
+                </a>
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-plus"></i>
+                    <span class="icon-text">Create</span>
+                </a>
+                <a href="notification.html" class="nav-icon">
+                    <i class="fas fa-heart"></i>
+                    <span class="icon-text">Notifications</span>
+                </a>
+                <a href="profile.html" class="nav-icon">
+                    <i class="fas fa-user"></i>
+                    <span class="icon-text">Profile</span>
+                </a>
+            </div>
+            <div class="bottom-icons">
+                <a href="setting-page.html" class="nav-icon">
+                    <i class="fas fa-cog"></i>
+                    <span class="icon-text">Settings</span>
+                </a>
+                <a href="../pages/apperancepage.html" class="nav-icon active">
+                    <i class="fas fa-moon"></i>
+                    <span class="icon-text">Appearance</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Container -->
+    <div class="post-container">
+        <!-- Left Section (Post Details) -->
+        <div class="post-details">
+            <div class="profile">
+                <img src="../assets/Boy.png" alt="Profile Picture">
+                <span>Hanna Donin</span>
+                <button type="button" class="switch-articles">Switch Articles</button>
+            </div>
+            <label for="caption">CAPTION</label>
+            <textarea id="caption" placeholder="Transform your skincare routine into a self-care ritual ✨ Dive into our botanical-infused wonders and unveil your natural radiance. 🌿"></textarea>
+            <div class="draft-toggle">
+                <span>This is a draft</span>
+                <input type="checkbox" checked>
+            </div>
+            <div class="tags-section">
+                <label for="tags">TAGS</label>
+                <div class="tag-input">
+                    <span class="tag-icon">📍</span>
+                    <input type="text" id="tagInput" placeholder="Add your Instagram Tags">
+                    <button type="button" id="addTagBtn">+</button>
+                </div>
+                <div class="suggested-tags">
+                    <span class="try-text">Try:</span>
+                    <button type="button" class="tag-btn" onclick="addTag('LoveYourSkin')">LoveYourSkin <span>+</span></button>
+                    <button type="button" class="tag-btn" onclick="addTag('GlowGoals')">GlowGoals <span>+</span></button>
+                    <button type="button" class="tag-btn" onclick="addTag('BeautyEssentials')">BeautyEssentials <span>+</span></button>
+                </div>
+                <div class="user-tags" id="userTags"></div>
+            </div>
+            <label class="used-labeles">ADD IMAGES</label>
+            <div class="image-upload">
+                <div class="image-box"><img src="../assets/fun-image.jpg" alt="Uploaded Image"></div>
+                <div class="image-box add">+</div>
+            </div>
+            <button type="button" class="schedule">Schedule</button>
+        </div>
+
+        <!-- Right Section (Preview) -->
+        <div class="preview">
+            <div class="preview-caution">
+                <h3>Preview</h3>
+                <p>Preview shows how your content will look when published.</p>
+            </div>
+            <div class="post-preview">
+                <div class="post-header">
+                    <img src="../assets/Boy.png" alt="Profile Picture">
+                    <span>HannaDonin</span>
+                    <span class="menu">⋮</span>
+                </div>
+                <img src="../assets/fun-image.jpg" class="preview-image" alt="Uploaded Image">
+                <div class="post-footer">
+                    <p><strong>HannaDonin</strong> Transform your skincare routine into a self-care ritual ✨ Dive into our botanical-infused wonders and unveil your natural radiance. 🌿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Container-->
+    <div class="article-container">
+        <h1>Write An Article</h1>
+        <form id="articleForm">
+            <!-- Title and Category in a Row -->
+            <div class="row">
+                <div class="form-group">
+                    <label for="title">Article Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Enter your article title" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Select Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Choose a category</option>
+                        <option value="technology">Technology &amp; Innovation</option>
+                        <option value="travel">Travel &amp; Adventures</option>
+                        <option value="food">Food &amp; Culinary Arts</option>
+                        <option value="science">Science &amp; Discoveries</option>
+                        <option value="finance">Finance &amp; Investments</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Quill Editor -->
+            <div class="form-group">
+                <label for="content">Write Your Article:</label>
+                <div id="editor"></div>
+                <input type="hidden" id="content" name="content">
+            </div>
+
+            <!-- Tags and Buttons in a Row -->
+            <div class="row">
+                <div class="form-group">
+                    <label for="tags">Keywords (comma separated):</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., tech, innovation, future">
+                </div>
+                <div class="form-actions">
+                    <button id="switchToPost" type="button">Switch To Post</button>
+                    <button id="saveToDraft" type="submit">Save To Draft</button>
+                    <button id="publishYourArticle" type="submit">Publish Your Article</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="../js/create-page.js"></script>
+</body>
+</html>

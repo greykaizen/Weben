@@ -1,3 +1,13 @@
+:root {
+    --bg-color: #121214;
+    --card-bg: #1c1c1f;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a5;
+    --accent-color: #5b41f5;
+    --border-color: #2c2c30;
+    --hover-color: #252528;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +29,9 @@ body {
     display: flex;
     min-height: 100vh;
 }
-*h2{
-    font-family: monospace; 
+
+h2 {
+    font-family: monospace;
     font-size: 16px;
 }
 
@@ -55,32 +66,6 @@ body {
     background-color: var(--hover-color);
 }
 
-/* Light Mode */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-body.light-mode .sidebar,
-body.light-mode .feed-container,
-body.light-mode .post,
-body.light-mode .login-section {
-    background-color: #f8f9fa;
-    border-color: #e0e0e0;
-}
-
-body.light-mode .nav-icon,
-body.light-mode .icon-text,
-body.light-mode .username,
-body.light-mode .post-content,
-body.light-mode .translate,
-body.light-mode .emoji,
-body.light-mode .action,
-body.light-mode .login-container h2,
-body.light-mode .login-container p {
-    color: #000000;
-}
-
 /* Sidebar */
 .sidebar {
     width: 60px;
@@ -109,18 +94,15 @@ body.light-mode .login-container p {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Updated to flex-start for better alignment */
-    align-items: center; /* Center the logo horizontally */
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Logo Image */
 .logo img {
-    width: 70px; /* Adjust size as needed */
+    width: 70px;
     height: 70px;
-    /* border-radius: 50%; Optional: if you want a circular logo */
-    /* object-fit: cover; Ensures the image fits well within the dimensions */
-    filter: invert(1); /* Reset the logo to its original colors */
-
+    filter: invert(1);
 }
 
 .nav-icons {
@@ -211,15 +193,28 @@ body.light-mode .login-container p {
     left: 650px;
 }
 
+/* Feed Container */
 .feed-container {
     background-color: #181818;
     border: 1px solid #303030;
     border-radius: 30px;
-    width: 600px;
+    width: 780px; /* Increased by 30% (from 600px to 780px) */
     min-height: calc(100vh - 80px);
-    /* height: 100%; */
     margin: 0;
     overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+    .feed-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .feed-container {
+        width: 100%; /* Full width on mobile devices */
+        border-radius: 0; /* Remove border radius for full-width layout */
+    }
 }
 
 .post {
@@ -363,16 +358,15 @@ body.light-mode .login-container p {
     text-align: center;
     color: #999;
     font-size: 14px;
-    cursor: pointer;
 }
 
-/* Media Query for the responsiveness */
+/* Media Query for Responsiveness */
 @media (max-width: 1100px) {
     .content-wrapper {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .login-section {
         width: 600px;
         margin-bottom: 20px;
@@ -383,11 +377,11 @@ body.light-mode .login-container p {
     .sidebar:hover {
         width: 180px;
     }
-    
+
     .sidebar:hover ~ .main-content {
         margin-left: 180px;
     }
-    
+
     .feed-container,
     .login-section {
         width: 90%;
@@ -398,7 +392,7 @@ body.light-mode .login-container p {
     .feed-header {
         padding-left: 70px;
     }
-    
+
     .sidebar:hover ~ .main-content .feed-header {
         padding-left: 190px;
     }

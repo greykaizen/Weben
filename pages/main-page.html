@@ -9,46 +9,94 @@
 </head>
 
 <body>
+    <!-- Modal Overlay -->
     <div id="modalOverlay" class="modal-overlay">
         <div class="modal">
             <a href="#" class="close-btn">&times;</a>
             <div class="modal-content">
-                <div class="twitter-logo">
-                    <img src="../assets/craiyon_011841_Gibberish_tantric_art__Very_minimal_soma__Minimal_mystical_symbols_on_white__expresin-removebg-preview.png" alt="My Logo" width="100" height="100">
+                <!-- Step 1: Username Input -->
+                <div id="step1">
+                    <div class="twitter-logo">
+                        <img src="../assets/craiyon_011841_Gibberish_tantric_art__Very_minimal_soma__Minimal_mystical_symbols_on_white__expresin-removebg-preview.png" alt="My Logo" width="100" height="100">
+                    </div>
+                    <h2 class="modal-title">Sign in to loom</h2>
+                    <button type="button" class="btn google-btn">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4="
+                            alt="Google icon">
+                        Sign in with Google
+                    </button>
+                    <button type="button" class="btn apple-btn">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjYgOS44Yy0uMDMtMi42IDIuMTMtMy44NCAyLjItMy45Mi0xLjItMS43NS0zLjA2LTItMy43My0yLjAyLTEuNTgtLjE3LTMuMDkuOTMtMy45Ljk0LS44IDAtMi4wNi0uOTItMy4zOC0uOS0xLjc0LjAzLTMuMzQgMS0yLjQzIDIuNTMtMS43NC0uMDQtMi41NS45My0yLjUzIDIuNTUuMDMgMS45NCAxLjc1IDYuOTEgMi41IDYuOTEuNzQgMCAuOTYtLjQ4IDEuNzktLjQ4LjgyIDAgMS4wNC40OCAxLjc5LjQ4Ljc0IDAgMS4yLS42NiAyLjA3LTEuNzkuOS0xLjMxIDEuMjctMi41OCAxLjMtMjY1LS4wMy0uMDEtMi40OC0uOTUtMi41LTMuNzgtLjAzLTIuMzUgMS45Mi0zLjQ4IDItMy41NC0xLjEtMS42MS0yLjgtMS43OC0zLjQtMS44M3oiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg=="
+                            alt="Apple icon">
+                        Sign in with Apple
+                    </button>
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-text">or</div>
+                        <div class="divider-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Phone, email or username">
+                    </div>
+                    <button id="nextBtn" class="btn next-btn">Next</button>
+                    <button type="button" id="forgotPasswordBtn" class="btn forgot-password">Forgot Password?</button>
+                    <p class="signup-text">Don't have an account? <a href="#" id="signUpBtn">Sign up</a></p>
                 </div>
-                <h2 class="modal-title">Sign in to loom</h2>
-                <button type="button" class="btn google-btn">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4="
-                        alt="Google icon">
-                    Sign in with Google
-                </button>
-                <button class="btn apple-btn">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjYgOS44Yy0uMDMtMi42IDIuMTMtMy44NCAyLjItMy45Mi0xLjItMS43NS0zLjA2LTItMy43My0yLjAyLTEuNTgtLjE3LTMuMDkuOTMtMy45Ljk0LS44IDAtMi4wNi0uOTItMy4zOC0uOS0xLjc0LjAzLTMuMzQgMS0yLjQzIDIuNTMtMS43NC0uMDQtMi41NS45My0yLjUzIDIuNTUuMDMgMS45NCAxLjc1IDYuOTEgMi41IDYuOTEuNzQgMCAuOTYtLjQ4IDEuNzktLjQ4LjgyIDAgMS4wNC40OCAxLjc5LjQ4Ljc0IDAgMS4yLS42NiAyLjA3LTEuNzkuOS0xLjMxIDEuMjctMi41OCAxLjMtMi42NS0uMDMtLjAxLTIuNDgtLjk1LTIuNS0zLjc4LS4wMy0yLjM1IDEuOTItMy40OCAyLTMuNTQtMS4xLTEuNjEtMi44LTEuNzgtMy40LTEuODN6IiBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4="
-                        alt="Apple icon">
-                    Sign in with Apple
-                </button>
-                <div class="divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-text">or</div>
-                    <div class="divider-line"></div>
+
+                <!-- Step 2: Password Input -->
+                <div id="step2" style="display: none;">
+                    <div class="twitter-logo">
+                        <img src="../assets/craiyon_011841_Gibberish_tantric_art__Very_minimal_soma__Minimal_mystical_symbols_on_white__expresin-removebg-preview.png" alt="My Logo" width="100" height="100">
+                    </div>
+                    <h2 class="modal-title">Enter your password</h2>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <button id="loginBtn" class="btn next-btn">Log in</button>
+                    <button id="backToStep1" class="btn forgot-password">Back</button>
                 </div>
-                <div class="form-group">
-                    <input type="text" id="username" name="username" placeholder="Phone, email or username">
+
+                <!-- Forgot Password Section -->
+                <div id="forgotPasswordSection" style="display: none;">
+                    <div class="twitter-logo">
+                        <img src="../assets/craiyon_011841_Gibberish_tantric_art__Very_minimal_soma__Minimal_mystical_symbols_on_white__expresin-removebg-preview.png" alt="My Logo" width="100" height="100">
+                    </div>
+                    <h2 class="modal-title">Forgot Password</h2>
+                    <div class="form-group">
+                        <input type="email" id="forgotEmail" name="email" placeholder="Enter your email">
+                    </div>
+                    <button id="resetPasswordBtn" class="btn next-btn">Reset Password</button>
+                    <button id="backToLogin" class="btn forgot-password">Back to Login</button>
                 </div>
-                <!-- <button class="btn next-btn">Next</button>
-                  -->
-                <a href="homepage.html" class="btn next-btn" style="text-decoration: none; text-align: center;">Next</a>
-                <button type="button" class="btn forgot-password">Forgot Password?</button>
-                <p class="signup-text">Don't have an account? <a href="#">Sign up</a></p>
+
+                <!-- Sign Up Section -->
+                <div id="signUpSection" style="display: none;">
+                    <div class="twitter-logo">
+                        <img src="../assets/craiyon_011841_Gibberish_tantric_art__Very_minimal_soma__Minimal_mystical_symbols_on_white__expresin-removebg-preview.png" alt="My Logo" width="100" height="100">
+                    </div>
+                    <h2 class="modal-title">Sign Up</h2>
+                    <div class="form-group">
+                        <input type="text" id="signupUsername" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" name="password" placeholder="Password">
+                    </div>
+                    <button id="signUpSubmitBtn" class="btn next-btn">Sign Up</button>
+                    <button id="backToLoginFromSignup" class="btn forgot-password">Back to Login</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
                 <div class="logo-container">
-                    <img src="../assets/mainLogo.png"
-                        alt="Logo" class="logo-image">
+                    <img src="../assets/mainLogo.png" alt="Logo" class="logo-image">
                     <span class="logo-name" style="font-family: monospace;">loom</span>
                 </div>
                 <div class="nav-links">
@@ -62,6 +110,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1 style="font-size: 48px; font-family: monospace; justify-self: center;">Where conversations happen</h1>
@@ -117,6 +166,7 @@
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="features-grid">
@@ -144,6 +194,7 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <h2 style="font-family: monospace;">What people are saying</h2>
@@ -177,6 +228,7 @@
         </div>
     </section>
 
+    <!-- Call to Action Section -->
     <section class="cta">
         <div class="container">
             <h2 style="font-family: monospace;;">Join the conversation today</h2>
@@ -196,6 +248,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -261,6 +314,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/model.js"></script>
 </body>
 
 </html>

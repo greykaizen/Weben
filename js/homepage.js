@@ -89,7 +89,9 @@ document.querySelector('.close-modal').addEventListener('click', () => {
 
 document.getElementById('copy-link').addEventListener('click', () => {
     const shareUrl = document.getElementById('share-url');
-    shareUrl.select();
-    document.execCommand('copy');
-    alert('Link copied to clipboard!');
+    navigator.clipboard.writeText(shareUrl.value).then(() => {
+        alert('Link copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
 });
