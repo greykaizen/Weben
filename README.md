@@ -1,4 +1,4 @@
-# Weben ![Weben Screenshot](/assets/mainLogo-xs.png)
+# Weben 
 
 <div align="center">
   
