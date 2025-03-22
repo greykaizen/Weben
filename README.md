@@ -1,4 +1,4 @@
-# Weben
+# Weben ![Weben Screenshot](/assets/mainLogo-xs.png)
 
 <div align="center">
   
@@ -12,7 +12,7 @@ Knowledge Nexus is a modern content sharing and discussion platform inspired by 
 
 <div align="center">
   
-![Weben Screenshot](/assets/mainLogo.png)
+<!-- ![Weben Screenshot](/assets/mainLogo-xs.png) -->
   
 </div>
 
