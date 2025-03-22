@@ -293,7 +293,15 @@ textarea {
     cursor: pointer;
 }
 
-.schedule {
+.schedule{
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.postNowBtn{
     background: #007bff;
     color: white;
     border: none;
@@ -485,7 +493,8 @@ textarea {
     margin: 5px;
 }
 
-.editor{
-    height: 350px;
+#editor{
+    height: 300px;
+    
 }
     
